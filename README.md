@@ -1,9 +1,9 @@
 # uploadFileDemo
-前端文件上传和调用摄像头原理和DEMO（不兼容部分手机----小米）
+前端文件上传和调用摄像头原理和DEMO
 <pre>
 上传文件到后台。
 
-<input type='file' accept='image/*' capture='camera'>    //capture='camera' 可调用摄像头
+<input type='file' accept='image/*' capture='camera'>    //capture='camera' 可调用摄像头（不兼容部分手机----小米）
 	
 H5添加了一个新的接口——FormData。利用 FormData 对象，我们可以通过 JavaScript 用一些键值对来模拟一系列表单控件。
 
