@@ -17,4 +17,8 @@ $.ajax({
 	data:formData,
 	……
 })
+//图片替换 在本地浏览器选好图片后，替换选中的图片
+var avatarImg=e.target.files || e.dataTransfer.files;
+src = window.URL.createObjectURL(avatarImg[0])
 </pre>
+
