@@ -1,0 +1,28 @@
+﻿
+	<input type="file" accept="image/*" id="uploadImg"/>
+
+	(function () {
+    	$('#uploadImg').change(function (e) {
+    		  var avatarImg = e.target.files || e.dataTransfer.files;
+              var formData = new FormData();
+              formData.append('avatar',avatarImg[0]);
+              $.ajax({
+                  url: "http://money.beta.ule.com/cnpsec/user/uploadHeadPortrait.do",
+    			  type: 'post',
+                  data: formData,
+                  async: false,
+                  cache: false,
+                  contentType: false,
+                  processData: false,
+                  success: function (res) {
+                      var data = JSON.parse(res);
+                      if (data.msgCode === '0000') {
+                    	  getImg.src = window.URL.createObjectURL(avatarImg[0]);
+                    	  alert(data.msg)
+                      } else {
+                    	  alert(data.msg)
+                      }
+    				}
+      		})
+    	})
+	})();
